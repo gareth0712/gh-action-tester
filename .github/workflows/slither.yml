@@ -26,15 +26,16 @@ jobs:
           sarif: ./results.sarif
           fail-on: none
           slither-args:
-            --checklist --markdown-root ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.sha }}/
+            --checklist --show-ignored-findings --markdown-root ${{ github.server_url }}/${{ github.repository }}/blob/${{ github.sha }}/
 
       - name: 'Slither Analysis Report'
         uses: actions/github-script@v7
         with:
           script: |
             const header = '## Slither Analysis Report';
-            const body = "${{ steps.slither.outputs.stdout }}";
+            const body = `${{ steps.slither.outputs.stdout }}`;
             await core.summary.addHeading(header, '2');
+            await core.summary.addRaw(body, true);
             await core.summary.write({ overwrite: true });
 
       # Upload SARIF to security tab
