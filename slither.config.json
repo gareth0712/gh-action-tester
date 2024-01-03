@@ -1,0 +1,10 @@
+{
+  "detectors_to_exclude": "naming-convention,reentrancy-events,solc-version,timestamp",
+  "filter_paths": "(lib/|test/|node_modules/)",
+  "exclude_dependencies": true,
+  "solc_remaps": [
+    "@openzeppelin/=node_modules/@openzeppelin/",
+    "prb-test/=lib/prb-test/src/",
+    "forge-std/=lib/forge-std/src/"
+  ]
+}

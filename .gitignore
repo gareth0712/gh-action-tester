@@ -128,3 +128,36 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Smart Contracts
+tmp
+/abi/
+artifacts/
+cache/
+coverage/
+exports/
+/types/
+coverage.json
+.env
+.DS_Store
+.idea/
+flatten
+cache_forge/
+cache_hardhat/
+lcov.info
+.wallet
+.wallet-*
+!.wallet-hardhat
+!.wallet-scriptDev
+
+# Deployment snapshots
+.openzeppelin/unknown-*.json
+!.openzeppelin/mainnet.json
+
+deployed/localhost/
+deployed/hardhat/
+deployed/scriptDev/
+
+# CF workers
+tenderly-proxy/src/environment/index.ts
+tenderly-proxy/.wrangler

@@ -1,0 +1,13 @@
+[profile.default]
+  auto_detect_solc = false
+  bytecode_hash = "none"
+  cbor_metadata = false
+  gas_reports = ["*"]
+  out = "out"
+  src = "contracts"
+  script = "script"
+  test = "test"
+  optimizer = true
+  optimizer_runs = 999_999
+  solc = "0.8.20"
+  gas_reports_ignore = ["Utils","TransparentUpgradeableProxy"]
