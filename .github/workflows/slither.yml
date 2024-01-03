@@ -34,8 +34,8 @@ jobs:
           script: |
             const script = require('.github/scripts/summary')
             const header = '## Slither Analysis Report'
-            const body = "${{ steps.slither.outputs.stdout }}"
-            body.replace('`', '|');
+            let body = "${{ steps.slither.outputs.stdout }}"
+            body = body.replace('`', '|');
             await script({ core, header, body })
 
       # Upload SARIF to security tab
