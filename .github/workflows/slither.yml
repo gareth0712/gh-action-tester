@@ -32,18 +32,10 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            await core.summary.addHeading('hihi', '2');
+            const header = '## Slither Analysis Report'
+            const body = "${{ steps.slither.outputs.stdout }}".replace('`', '|');
+            await core.summary.addHeading(header, '2');
             await core.summary.write({ overwrite: true });
-
-      # - name: 'Slither Analysis Report'
-      #   uses: actions/github-script@v7
-      #   with:
-      #     script: |
-      #       const script = require('.github/scripts/summary')
-      #       const header = '## Slither Analysis Report'
-      #       let body = "${{ steps.slither.outputs.stdout }}"
-      #       body = body.replace('`', '|');
-      #       await script({ core, header, body })
 
       # Upload SARIF to security tab
       # private repo - advanced security
