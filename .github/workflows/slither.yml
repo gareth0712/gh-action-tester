@@ -35,7 +35,7 @@ jobs:
             const script = require('.github/scripts/summary')
             const header = '## Slither Analysis Report'
             const body = `${{ steps.slither.outputs.stdout }}`
-            await script({ core, context, header, body })
+            await script({ core, header, body })
 
       # Upload SARIF to security tab
       # private repo - advanced security
